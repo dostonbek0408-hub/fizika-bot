@@ -269,7 +269,7 @@ async def cb(update, ctx):
     elif d.startswith("test_"): await test_savol(update, ctx)
 
 def main():
-    app = Application.builder().token(TOKEN).build()
+    app = Application.builder().token(TOKEN).updater(None).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(cb))
     print("Bot ishga tushdi!")
